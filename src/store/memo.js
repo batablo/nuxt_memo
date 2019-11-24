@@ -7,14 +7,14 @@ export const mutations = {
   insert: function(state, obj) {
     var date = new Date()
     var fmt = date.getFullYear() + '-' + (date.getMonth() + 1) + '-'
-              + date.getDate() + date.getHours() + ':' + date.getMinutes()
-    state.memo = unshift({
+              + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes()
+    state.memo.unshift({
       title: obj.title,
       content: obj.content,
       created: fmt
     })
   },
-  setPage: function(state, page) {
+  set_page: function(state, page) {
     state.page = page
   },
   remove: function(state, obj) {
